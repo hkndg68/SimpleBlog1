@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace SimpleBlog1.Controllers
 {
-    public class PostController : Controller
+    public class HakkimdaController : Controller
     {
         //
-        // GET: /Post/
+        // GET: /Hakkimda/
         public ActionResult Index()
         {
-            return View ();
+            return View();
         }
 	}
 }

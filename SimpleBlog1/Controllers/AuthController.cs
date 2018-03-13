@@ -10,9 +10,9 @@ namespace SimpleBlog1.Controllers
     {
         //
         // GET: /Auth/
-        public ActionResult login()
+        public ActionResult hakkimda()
         {
-            return Content("Auth controller login action");
+            return View();
         }
 	}
 }
