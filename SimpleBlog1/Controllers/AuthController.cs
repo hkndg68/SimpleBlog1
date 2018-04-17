@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleBlog1.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,9 +11,27 @@ namespace SimpleBlog1.Controllers
     {
         //
         // GET: /Auth/
-        public ActionResult hakkimda()
+        public ActionResult Login()
         {
-            return View();
+            return View(new Authlogin() {Test="This my test value set in my controller"}
+                );   
+            
+        }
+        [HttpPost]
+        public ActionResult Login(Authlogin form)
+     
+        {
+            if (!ModelState.IsValid)
+        {
+            return View(form);
+        }
+    if (form.UserName!="hakan")
+    {
+        ModelState.AddModelError("Username", "Hatalı");
+        return View(form);
+    }
+
+            return Content("the form is valid");
         }
 	}
 }
